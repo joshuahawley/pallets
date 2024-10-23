@@ -135,11 +135,12 @@ form h3 {
 
 .container {
     background-color: rgba(79, 93, 117, 0.3);
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     width: 90%;
     max-width: 400px;
+    margin: 0 auto; /* Center container */
 }
 
 #palletPreview {
@@ -160,7 +161,7 @@ form h3 {
 
 /* Download button styling */
 .download-buttons {
-    margin-top: 20px;
+    margin-top: 25px;
     text-align: center;
 }
 
@@ -172,12 +173,14 @@ form h3 {
 
     .container, form {
         width: 100%;
-        padding: 15px;
+        padding: 25px;
+        margin-bottom: 30px; /* Increased margin at the bottom */
     }
 
     button {
         width: 100%;
-        padding: 15px;
+        padding: 20px; /* Increased button padding */
+        margin: 10px 0; /* Add margin to buttons */
     }
 
     #stack-visual {
@@ -190,5 +193,24 @@ form h3 {
 
     .pallet-box {
         border-radius: 2px;
+    }
+
+    form input[type="range"] {
+        margin-bottom: 25px; /* More spacing between sliders */
+    }
+
+    form label {
+        font-size: 16px;
+    }
+
+    form input[type="range"] {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    /* Ensure extra padding around form elements */
+    form {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
