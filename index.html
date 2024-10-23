@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pallet Stack Optimizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main content -->
+    <div class="main-menu">
+        <h1>Welcome to the Pallet Stack Optimizer</h1>
+        <div class="menu-buttons">
+            <button id="startBtn">Start Optimization</button>
+            <button id="helpBtn">Help / Instructions</button>
+        </div>
+    </div>
+
+    <div class="container" id="optimizationSection" style="display: none;">
+        <h1>Pallet Stack Optimizer</h1>
+        <form id="stackForm">
+            <!-- Bag Dimensions -->
+            <h3>Bag Dimensions</h3>
+            <label for="length">Length of Bag (inches): 
+                <span id="lengthDisplay">24</span>
+                <input type="number" id="lengthInput" min="10" max="60" value="24" style="display: none;">
+            </label>
+            <input type="range" id="length" min="10" max="60" value="24" step="1">
+
+            <label for="width">Width of Bag (inches): 
+                <span id="widthDisplay">16</span>
+                <input type="number" id="widthInput" min="10" max="60" value="16" style="display: none;">
+            </label>
+            <input type="range" id="width" min="10" max="60" value="16" step="1">
+
+            <label for="height">Height of Bag (inches): 
+                <span id="heightDisplay">8</span>
+                <input type="number" id="heightInput" min="5" max="20" value="8" style="display: none;">
+            </label>
+            <input type="range" id="height" min="5" max="20" value="8" step="1">
+
+            <label for="weight">Gross Weight of Bag (lbs): 
+                <span id="weightDisplay">50</span>
+                <input type="number" id="weightInput" min="10" max="100" value="50" style="display: none;">
+            </label>
+            <input type="range" id="weight" min="10" max="100" value="50" step="1">
+
+            <!-- Pallet Dimensions -->
+            <h3>Pallet Dimensions</h3>
+            <label for="palletLength">Pallet Length (inches): 
+                <span id="palletLengthDisplay">48</span>
+                <input type="number" id="palletLengthInput" min="20" max="120" value="48" style="display: none;">
+            </label>
+            <input type="range" id="palletLength" min="20" max="120" value="48" step="1">
+
+            <label for="palletWidth">Pallet Width (inches): 
+                <span id="palletWidthDisplay">40</span>
+                <input type="number" id="palletWidthInput" min="20" max="120" value="40" style="display: none;">
+            </label>
+            <input type="range" id="palletWidth" min="20" max="120" value="40" step="1">
+
+            <label for="palletMaxHeight">Pallet Max Height (inches): 
+                <span id="palletMaxHeightDisplay">72</span>
+                <input type="number" id="palletMaxHeightInput" min="50" max="100" value="72" style="display: none;">
+            </label>
+            <input type="range" id="palletMaxHeight" min="50" max="100" value="72" step="1">
+
+            <label for="maxWeight">Max Gross Weight of Pallet (lbs): 
+                <span id="maxWeightDisplay">2000</span>
+                <input type="number" id="maxWeightInput" min="500" max="3000" value="2000" style="display: none;">
+            </label>
+            <input type="range" id="maxWeight" min="500" max="3000" value="2000" step="50">
+
+            <button type="submit">Optimize Stack</button>
+        </form>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" style="display: none;">
+            <div class="spinner"></div> <!-- Procedural CSS animation -->
+        </div>
+
+        <!-- Result Section -->
+        <div id="result"></div>
+        
+        <!-- Download Buttons -->
+        <div class="download-buttons">
+            <button id="downloadCSV" style="display: none;">Download CSV</button>
+            <button id="downloadPDF" style="display: none;">Download PDF</button>
+        </div>
+    </div>
+
+    <!-- Help Section -->
+    <div id="helpSection" style="display: none;">
+        <h2>How to Use the Pallet Stack Optimizer</h2>
+        <p>This tool helps you find the most efficient way to stack items on a pallet. Adjust the sliders to match your bag dimensions, weight, and pallet constraints, then click "Optimize Stack."</p>
+        <ul>
+            <li><strong>Bag Dimensions:</strong> Set the length, width, height, and weight of the individual bags.</li>
+            <li><strong>Pallet Dimensions:</strong> Set the length, width, and maximum height of the pallet.</li>
+            <li><strong>Max Gross Weight:</strong> Set the maximum allowable weight of the pallet including the bags.</li>
+        </ul>
+        <button id="backToMenu">Back to Menu</button>
+    </div>
+
+    <!-- Include jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
